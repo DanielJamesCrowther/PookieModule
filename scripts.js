@@ -1,7 +1,8 @@
 
 // Import functions
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
 
 // web app's Firebase configuration
 const firebaseConfig = {
@@ -224,6 +225,22 @@ function plotPhData(data) {
         type: 'scatter'
     }], layout);
 }
+
+// Add an event listener to the "Feed Fish" button
+document.querySelector('.feed-fish-button').addEventListener('click', function() {
+    // Get a reference to the 'Servo' field in the database
+    const servoRef = ref(database, 'Servo');
+
+    // Update the value of the 'Servo' field to true
+    set(servoRef, true)
+        .then(() => {
+            console.log("Servo turned on.");
+        })
+        .catch((error) => {
+            console.error("Error turning on servo:", error);
+        });
+});
+
 
 // Fetch data initially
 fetchData();

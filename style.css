@@ -35,4 +35,16 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-        
+        /* Define custom orange color */
+        .custom-orange {
+            background-color: #F59E0B; /* Adjust this color code to match the orange of the circles */
+        }
+
+        /* Apply custom color to the button */
+        .bg-orange-custom {
+            background-color: #F59E0B; /* Adjust this color code to match the orange of the circles */
+        }
+
+        .bg-orange-custom:hover {
+            background-color: #D97706; /* Adjust this color code for the hover effect */
+        }
