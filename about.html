@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Smart Fish Module</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 gradient-bg">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="logo.jpg" alt="Logo" class="h-8 mr-2">
+                <h1 class="text-lg font-semibold text-blue-600">Smart Fish Module</h1>
+            </div>
+            <!-- Navbar Links -->
+            <ul class="flex">
+                <li class="mr-6">
+                    <a href="index.html" class="text-blue-600 hover:text-blue-800 font-semibold">Home</a>
+                </li>
+                <li class="mr-6">
+                    <a href="about.html" class="text-blue-600 hover:text-blue-800 font-semibold">About</a>
+                </li>
+                <li>
+                    <a href="contact.html" class="text-blue-600 hover:text-blue-800 font-semibold">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="container mx-auto py-8 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-4 text-blue-600">About Smart Fish Module</h2>
+            <p class="text-lg text-gray-700 mb-8">Our idea is a smart fish tank module that is an attachment to be implemented onto any fish tank. It has automatic feeders 
+                and sensors to reduce user labour and errors. This solution will help keep the fish healthy and, in the future, could potentially be extended for use in 
+                commercial fish farms.</p>
+            <h2 class="text-3xl font-semibold mb-4 text-blue-600">Case Design</h2>
+            <p class="text-lg text-gray-700 mb-8">The case of the module is made from laser cut acrylic and 3D printed components. Below you can see our first prototype on the left and our final design on the right.</p>
+            <img src="case.png" alt="About Us" class="rounded-lg shadow-lg mb-8">
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section class="py-2 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold mb-4 text-blue-600 text-center">Components</h2>
+            <p class="text-lg text-gray-700 mb-8 text-center">The solution for our challenge is to automate many of the tasks to care for a fish. Listed below are the key components of the Fish Module</p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <li class="bg-white border border-gray-200 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold mb-2">Water Flow Sensor</h3>
+                    <p class="text-gray-700">Monitors water flow rate.</p>
+                </li>
+                <li class="bg-white border border-gray-200 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold mb-2">Photosensor</h3>
+                    <p class="text-gray-700">Measures light intensity.</p>
+                </li>
+                <li class="bg-white border border-gray-200 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold mb-2">Turbidity Sensor</h3>
+                    <p class="text-gray-700">Detects water clarity.</p>
+                </li>
+                <li class="bg-white border border-gray-200 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold mb-2">Water Level Sensor</h3>
+                    <p class="text-gray-700">Monitors water level.</p>
+                </li>
+                <li class="bg-white border border-gray-200 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold mb-2">Temperature Sensor</h3>
+                    <p class="text-gray-700">Measures water temperature.</p>
+                </li>
+                <li class="bg-white border border-gray-200 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold mb-2">ESP32 Microcontroller</h3>
+                    <p class="text-gray-700">Controls and manages data.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-14">
+        <div class="container mx-auto py-4 px-4 text-center">
+            <p class="text-gray-600">© 2024 Pookie Smart Fish Module. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

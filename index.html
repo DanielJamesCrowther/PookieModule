@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Fish Module Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" type="module"></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body class="bg-gray-100 gradient-bg">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="logo.jpg" alt="Logo" class="h-8 mr-2">
+                <h1 class="text-lg font-semibold text-blue-600">Smart Fish Module</h1>
+            </div>
+            <!-- Navbar Links -->
+            <ul class="flex">
+                <li class="mr-6">
+                    <a href="index.html" class="text-blue-600 hover:text-blue-800 font-semibold">Home</a>
+                </li>
+                <li class="mr-6">
+                    <a href="about.html" class="text-blue-600 hover:text-blue-800 font-semibold">About</a>
+                </li>
+                <li>
+                    <a href="contact.html" class="text-blue-600 hover:text-blue-800 font-semibold">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mx-auto py-8 px-4">
+        <!-- Title -->
+        <h1 class="text-3xl text-center font-semibold mb-8 text-white">Smart Fish Module Dashboard</h1>
+
+        <!-- Current sensor readings -->
+        <div class="flex justify-center flex-wrap mb-8">
+            <div class="flex flex-col items-center justify-center mb-4 md:mb-0 md:w-1/3 px-2">
+                <div class="circle light mb-2">0</div>
+                <span class="text-sm font-semibold text-white">Light</span>
+            </div>
+            <div class="flex flex-col items-center justify-center mb-4 md:mb-0 md:w-1/3 px-2">
+                <div class="circle turbidity mb-2">0</div>
+                <span class="text-sm font-semibold text-white">Turbidity</span>
+            </div>
+            <div class="flex flex-col items-center justify-center mb-4 md:mb-0 md:w-1/3 px-2">
+                <div class="circle water-level mb-2">0</div>
+                <span class="text-sm font-semibold text-white">Water Level</span>
+            </div>
+            <div class="flex flex-col items-center justify-center mb-4 md:mb-0 md:w-1/3 px-2">
+                <div class="circle flow mb-2">0</div>
+                <span class="text-sm font-semibold text-white">Flow</span>
+            </div>
+            <div class="flex flex-col items-center justify-center mb-4 md:mb-0 md:w-1/3 px-2">
+                <div class="circle temperature mb-2">0</div>
+                <span class="text-sm font-semibold text-white">Temperature</span>
+            </div>
+        </div>
+
+
+        <!-- Graphs -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Temp -->
+            <div class="box p-6 rounded-lg shadow-lg">
+                <h2 class="text-lg font-semibold mb-4 text-blue-600">Temperature</h2>
+                <div id="temperature-chart"></div>
+            </div>
+
+            <!-- Water Level -->
+            <div class="box p-6 rounded-lg shadow-lg">
+                <h2 class="text-lg font-semibold mb-4 text-blue-600">Water Level</h2>
+                <div id="water-level-chart"></div>
+            </div>
+
+            <!-- Light Level -->
+            <div class="box p-6 rounded-lg shadow-lg">
+                <h2 class="text-lg font-semibold mb-4 text-blue-600">Light Level</h2>
+                <div id="photo-resistor-chart"></div>
+            </div>
+
+            <!-- Flow -->
+            <div class="box p-6 rounded-lg shadow-lg">
+                <h2 class="text-lg font-semibold mb-4 text-blue-600">Flow</h2>
+                <div id="flow-control-chart"></div>
+            </div>
+
+            <!-- Turbidty -->
+            <div class="box p-6 rounded-lg shadow-lg">
+                <h2 class="text-lg font-semibold mb-4 text-blue-600">Turbidity</h2>
+                <div id="turbidity-chart"></div>
+            </div>
+
+            <!-- PH -->
+            <div class="box p-6 rounded-lg shadow-lg">
+                <h2 class="text-lg font-semibold mb-4 text-blue-600">PH</h2>
+                <div id="ph-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t border-gray-200 mt-14">
+        <div class="container mx-auto py-4 px-4 text-center">
+            <p class="text-gray-600">© 2024 Pookie Smart Fish Module. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
