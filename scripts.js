@@ -1,10 +1,8 @@
-
 // Import functions
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
-
-// web app's Firebase configuration
+// Web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAiVjkZYl0f-GOSS6jFT6u60soSZGfHKw4",
     authDomain: "smart-fish-tank-f5a11.firebaseapp.com",
@@ -23,15 +21,14 @@ const database = getDatabase();
 // Reference to your JSON data in the database
 const dataRef = ref(database, 'data');
 
-//update circle values to show the latest data
+// Update circle values to show the latest data
 function updateCircleValues(data) {
-    document.querySelector('.circle.temperature').innerText = data.Temperature;
-    document.querySelector('.circle.water-level').innerText = data.WaterLevel;
-    document.querySelector('.circle.light').innerText = data.PhotoResistor;
-    document.querySelector('.circle.flow').innerText = data.FlowControl;
-    document.querySelector('.circle.turbidity').innerText = data.Turbidity;
+    document.querySelector('.circle.temperature').innerText = parseFloat(data.Temperature).toFixed(2);
+    document.querySelector('.circle.water-level').innerText = parseFloat(data.WaterLevel).toFixed(2);
+    document.querySelector('.circle.light').innerText = parseFloat(data.PhotoResistor).toFixed(2);
+    document.querySelector('.circle.flow').innerText = parseFloat(data.FlowControl).toFixed(2);
+    document.querySelector('.circle.turbidity').innerText = parseFloat(data.Turbidity).toFixed(2);
 }
-
 
 function fetchData() {
     // Listen for changes in the database and update the UI
@@ -92,23 +89,22 @@ function fetchData() {
             // Get the latest data point and update circle values
             const latestKey = Object.keys(snapshotData).pop();
             console.log(snapshotData[latestKey]);
-            //update circle values to show the latest data
+            // Update circle values to show the latest data
             updateCircleValues(snapshotData[latestKey]);
         }
     });
 }
 
-
 // Function to plot temperature data on graph
 function plotTemperatureData(data) {
     const layout = {
-        title: 'Temperature',
+        title: 'Temperature (°C)',
         xaxis: {
             title: 'Time',
             type: 'date'
         },
         yaxis: {
-            title: 'Temperature'
+            title: 'Temperature (°C)'
         }
     };
 
@@ -120,17 +116,16 @@ function plotTemperatureData(data) {
     }], layout);
 }
 
-
 // Function to plot water level data on graph
 function plotWaterLevelData(data) {
     const layout = {
-        title: 'Water Level',
+        title: 'Water Level (cm)',
         xaxis: {
             title: 'Time',
             type: 'date'
         },
         yaxis: {
-            title: 'Water Level'
+            title: 'Water Level (cm)'
         }
     };
 
@@ -145,13 +140,13 @@ function plotWaterLevelData(data) {
 // Function to plot photo resistor data on graph
 function plotPhotoResistorData(data) {
     const layout = {
-        title: 'Photo Resistor',
+        title: 'Photo Resistor (lx)',
         xaxis: {
             title: 'Time',
             type: 'date'
         },
         yaxis: {
-            title: 'Photo Resistor Value'
+            title: 'Photo Resistor Value (lx)'
         }
     };
 
@@ -166,13 +161,13 @@ function plotPhotoResistorData(data) {
 // Function to plot flow control data on graph
 function plotFlowControlData(data) {
     const layout = {
-        title: 'Flow Control',
+        title: 'Flow Control (L/min)',
         xaxis: {
             title: 'Time',
             type: 'date'
         },
         yaxis: {
-            title: 'Flow Control Value'
+            title: 'Flow Control Value (L/min)'
         }
     };
 
@@ -187,13 +182,13 @@ function plotFlowControlData(data) {
 // Function to plot turbidity data on graph
 function plotTurbidityData(data) {
     const layout = {
-        title: 'Turbidity',
+        title: 'Turbidity (NTU)',
         xaxis: {
             title: 'Time',
             type: 'date'
         },
         yaxis: {
-            title: 'Turbidity Value'
+            title: 'Turbidity Value (NTU)'
         }
     };
 
@@ -240,7 +235,6 @@ document.querySelector('.feed-fish-button').addEventListener('click', function()
             console.error("Error turning on servo:", error);
         });
 });
-
 
 // Fetch data initially
 fetchData();
