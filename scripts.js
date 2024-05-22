@@ -21,13 +21,27 @@ const database = getDatabase();
 // Reference to your JSON data in the database
 const dataRef = ref(database, 'data');
 
+// Function to get turbidity status
+function getTurbidityStatus(turbidity) {
+    if (turbidity < 20) {
+        return "Clear";
+    } else if (turbidity >= 20 && turbidity < 50) {
+        return "Cloudy";
+    } else {
+        return "Dirty";
+    }
+}
+
 // Update circle values to show the latest data
 function updateCircleValues(data) {
     document.querySelector('.circle.temperature').innerText = parseFloat(data.Temperature).toFixed(2);
     document.querySelector('.circle.water-level').innerText = parseFloat(data.WaterLevel).toFixed(2);
     document.querySelector('.circle.light').innerText = parseFloat(data.PhotoResistor).toFixed(2);
     document.querySelector('.circle.flow').innerText = parseFloat(data.FlowControl).toFixed(2);
-    document.querySelector('.circle.turbidity').innerText = parseFloat(data.Turbidity).toFixed(2);
+    
+    // Update turbidity status
+    const turbidityStatus = getTurbidityStatus(data.Turbidity);
+    document.querySelector('.circle.turbidity').innerText = turbidityStatus;
 }
 
 function fetchData() {
@@ -53,27 +67,27 @@ function fetchData() {
                     // Push data points to respective arrays
                     temperatureData.push({
                         x: new Date(timestamp),
-                        y: data.Temperature
+                        y: parseFloat(data.Temperature).toFixed(2)
                     });
                     phData.push({
                         x: new Date(timestamp),
-                        y: data.Ph
+                        y: parseFloat(data.Ph).toFixed(2)
                     });
                     waterLevelData.push({
                         x: new Date(timestamp),
-                        y: data.WaterLevel
+                        y: parseFloat(data.WaterLevel).toFixed(2)
                     });
                     photoResistorData.push({
                         x: new Date(timestamp),
-                        y: data.PhotoResistor
+                        y: parseFloat(data.PhotoResistor).toFixed(2)
                     });
                     flowControlData.push({
                         x: new Date(timestamp),
-                        y: data.FlowControl
+                        y: parseFloat(data.FlowControl).toFixed(2)
                     });
                     turbidityData.push({
                         x: new Date(timestamp),
-                        y: data.Turbidity
+                        y: parseFloat(data.Turbidity).toFixed(2)
                     });
                 }
             }
