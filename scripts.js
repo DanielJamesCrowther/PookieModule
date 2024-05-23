@@ -154,13 +154,13 @@ function plotWaterLevelData(data) {
 // Function to plot photo resistor data on graph
 function plotPhotoResistorData(data) {
     const layout = {
-        title: 'Photo Resistor (lx)',
+        title: 'Photo Resistor (lux)',
         xaxis: {
             title: 'Time',
             type: 'date'
         },
         yaxis: {
-            title: 'Photo Resistor Value (lx)'
+            title: 'Photo Resistor Value (lux)'
         }
     };
 
@@ -175,13 +175,13 @@ function plotPhotoResistorData(data) {
 // Function to plot flow control data on graph
 function plotFlowControlData(data) {
     const layout = {
-        title: 'Flow Control (L/min)',
+        title: 'Flow Control (ml/s)',
         xaxis: {
             title: 'Time',
             type: 'date'
         },
         yaxis: {
-            title: 'Flow Control Value (L/min)'
+            title: 'Flow Control Value (ml/s)'
         }
     };
 
