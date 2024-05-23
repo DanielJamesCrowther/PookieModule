@@ -133,13 +133,13 @@ function plotTemperatureData(data) {
 // Function to plot water level data on graph
 function plotWaterLevelData(data) {
     const layout = {
-        title: 'Water Level (cm)',
+        title: 'Water Level (%)',
         xaxis: {
             title: 'Time',
             type: 'date'
         },
         yaxis: {
-            title: 'Water Level (cm)'
+            title: 'Water Level (%)'
         }
     };
 
